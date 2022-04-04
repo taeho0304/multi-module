@@ -1,0 +1,18 @@
+/**
+ * bootJar은 실행가능한 jar를 만들려 하기 때문에 main()이 필요
+ * main()이 없는 core는 core에 있는 Bean Class를 다른 모듈에서 사용할 때 에러가 발생할 수 있어
+ * enabled를 false로 설정
+ */
+bootJar { enabled = false }
+jar { enabled = true }
+
+dependencies {
+    /**
+     * gradle 7버전 이후로는 compile을 사용할 수 없고
+     * Implementation을 사용하면 직접 의존하는 모듈(core)외에서는 사용할 수 없기 때문에
+     * apiElements를 사용
+     */
+     compileOnly 'org.springframework.boot:spring-boot-starter-web'
+     apiElements 'org.springframework.boot:spring-boot-starter-web'
+//     gradleApi 'org.springframework.boot:spring-boot-starter-web'
+}
