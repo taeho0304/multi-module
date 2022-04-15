@@ -14,5 +14,4 @@ dependencies {
      */
      compileOnly 'org.springframework.boot:spring-boot-starter-web'
      apiElements 'org.springframework.boot:spring-boot-starter-web'
-//     gradleApi 'org.springframework.boot:spring-boot-starter-web'
 }
